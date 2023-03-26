@@ -25,9 +25,8 @@
 
 ## WORKING
 - Flashing magisk
-- Back up and restore ( back up your Imei )
-- Back UP System Product Vndor and rename img to flash work
-- Android 11-13 Twrp work
+- Backup and restore ( back up your Imei )
+- BackUP annd restore ( back up your Partiton )
 - Mtp work
 - Otg work
 - Twrp booted
@@ -35,7 +34,6 @@
 -  virtual A/b 
 
 ## Bug
-- Touch still dead ( use OTG mouse )
 - Decryption
 - data Unable mount (Format data - yes to work) 
 - Fastbootd not work
