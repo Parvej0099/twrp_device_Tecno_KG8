@@ -24,8 +24,8 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/gsi_keys.mk)
 # Inherit from selene device
 $(call inherit-product, device/tecno/KG8/device.mk)
 
-# Inherit some common twrp stuff.
-$(call inherit-product, vendor/twrp/config/common.mk)
+# Inherit some common TWRP stuff.
+$(call inherit-product, vendor/pb/config/common.mk)
 
 # Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := KG8
@@ -35,6 +35,4 @@ PRODUCT_MODEL := Tecno SPARK 8 PRO
 PRODUCT_MANUFACTURER := TECNO Mobility Limited
 PRODUCT_RELEASE_NAME := Tecno SPARK 8 PRO
 
-# HACK: Set vendor patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2099-12-31
+
