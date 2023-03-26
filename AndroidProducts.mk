@@ -1,0 +1,2 @@
+PRODUCT_MAKEFILES := \
+     $(LOCAL_DIR)/twrp_KG8.mk
