@@ -32,9 +32,9 @@
 - Twrp booted
 - At  fastboot to gsi rom insall . Then gsi rom / custom rom twrp flashing work
 -  virtual A/b 
+-  - Decryption
 
 ## Bug
-- Decryption
 - data Unable mount (Format data - yes to work) 
 - Fastbootd not work
 
