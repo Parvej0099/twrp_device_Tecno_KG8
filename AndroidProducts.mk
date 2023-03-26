@@ -1,2 +1,2 @@
 PRODUCT_MAKEFILES := \
-     $(LOCAL_DIR)/twrp_KG8.mk
+     $(LOCAL_DIR)/omni_KG8.mk
