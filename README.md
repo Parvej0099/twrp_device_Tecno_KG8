@@ -1,4 +1,4 @@
-# TWRP Tree for Tecno spark 8 pro
+# PBRP Tree for Tecno spark 8 pro
 
 ## Device specifications
 
@@ -31,8 +31,7 @@
 - Otg work
 - Twrp booted
 - At  fastboot to gsi rom insall . Then gsi rom / custom rom twrp flashing work
--  virtual A/b 
--  - Decryption
+- virtual A/b 
 
 ## Bug
 - data Unable mount (Format data - yes to work) 
