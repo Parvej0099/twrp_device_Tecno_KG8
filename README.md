@@ -1,4 +1,4 @@
-# TWRP Tree for Tecno spark 8 pro
+# Pb Tree for Tecno spark 8 pro
 
 ## Device specifications
 
