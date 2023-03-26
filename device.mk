@@ -13,22 +13,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-
 LOCAL_PATH := device/tecno/KG8
 
-# Dynamic Partitions
-PRODUCT_USE_DYNAMIC_PARTITIONS := true
-
-# VNDK
-PRODUCT_TARGET_VNDK_VERSION := 30
-
-# API
-PRODUCT_SHIPPING_API_LEVEL := 30
-
-# V A/B
-ENABLE_VIRTUAL_AB := true
-$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
-
+# A/B support
+AB_OTA_UPDATER := true
 # A/B
 AB_OTA_PARTITIONS += \
     boot \
@@ -37,9 +25,10 @@ AB_OTA_PARTITIONS += \
     preloader \
     product \
     system \
-    vendor \
     vbmeta \
     vbmeta_system \
+    vbmeta_vendor \
+    vendor \
     vendor_boot
 
 AB_OTA_POSTINSTALL_CONFIG += \
@@ -48,10 +37,27 @@ AB_OTA_POSTINSTALL_CONFIG += \
     FILESYSTEM_TYPE_system=ext4 \
     POSTINSTALL_OPTIONAL_system=true
 
+# V A/B
+ENABLE_VIRTUAL_AB := true
+$(call inherit-product, $(SRC_TARGET_DIR)/product/virtual_ab_ota.mk)
+
+# Dynamic Partition
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+
+# VNDK
+PRODUCT_TARGET_VNDK_VERSION := 30
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.build.security_patch=2099-12-31
+
 # Boot control HAL
 PRODUCT_PACKAGES += \
-    android.hardware.boot@1.1-impl-recovery \
     android.hardware.boot@1.1-impl
+
+# Fastbootd
+PRODUCT_PACKAGES += \
+    android.hardware.fastboot@1.0-impl-mock \
+    fastbootd
 
 PRODUCT_PACKAGES_DEBUG += \
     update_engine_client
@@ -62,14 +68,3 @@ PRODUCT_PACKAGES += \
     update_engine \
     update_verifier \
     update_engine_sideload
-    
-# Fastbootd
-PRODUCT_PACKAGES += \
-    android.hardware.fastboot@1.0-impl-mock \
-    android.hardware.fastboot@1.0-imp-recovery
-    
-# Health Hal
-PRODUCT_PACKAGES += \
-     android.hardware.health@2.1-impl \
-     android.hardware.health@2.1-service
-     
