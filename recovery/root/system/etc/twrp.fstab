@@ -6,11 +6,12 @@
 /system_ext               ext4     system_ext                                               flags=display=system_ext;logical;slotselect
 /vendor                   ext4     vendor                                                   flags=display=vendor;logical;slotselect
 /product                  ext4     product                                                  flags=display=product;logical;slotselect
-/super          	      emmc    	/dev/block/platform/bootdevice/by-name/super            flags=backup=1;display="Super_image";flashimg=1
-/system_image	          emmc  	/dev/block/mapper/system                                flags=backup=1;flashimg=1;display="System Image";slotselect
-/system_ext               emmc  	/dev/block/mapper/system_ext                            flags=backup=1;flashimg=1;display="system_ext Image";slotselect
-/vendor_image	          emmc  	/dev/block/mapper/vendor                                flags=backup=1;flashimg=1;display="Vendor Image";slotselect
-/product                  emmc  	/dev/block/mapper/product                               flags=backup=1;flashimg=1;display="product Image";slotselect
+/super          	        emmc     /dev/block/platform/bootdevice/by-name/super             flags=backup=1;display="Super_image";flashimg=1
+/system_root             	ext4	   /dev/block/platform/bootdevice/by-name/system	          flags=display="System";wipeingui
+/system_image	            emmc  	 /dev/block/mapper/system                                 flags=backup=1;flashimg=1;display="System Image";slotselect
+/system_ext               emmc  	 /dev/block/mapper/system_ext                             flags=backup=1;flashimg=1;display="system_ext Image";slotselect
+/vendor_image	            emmc  	 /dev/block/mapper/vendor                                 flags=backup=1;flashimg=1;display="Vendor Image";slotselect
+/product                  emmc  	 /dev/block/mapper/product                                flags=backup=1;flashimg=1;display="product Image";slotselect
 /metadata                 ext4     /dev/block/platform/bootdevice/by-name/md_udc            flags=display=metadata
 /data                     f2fs     /dev/block/platform/bootdevice/by-name/userdata          flags=display=data
 /tranfs                   ext4     /dev/block/platform/bootdevice/by-name/tranfs            flags=display=tranfs
